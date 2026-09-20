@@ -1,0 +1,305 @@
+/* ═══════════════════════════════════════════════════════════
+   Skills Section — CSS Module
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Section container ─────────────────────────────────── */
+.section {
+  position: relative;
+  padding: 96px 24px 80px;
+  max-width: fit-content;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Ambient background orbs (purely decorative) */
+.section::before,
+.section::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+  opacity: 0.55;
+}
+
+.section::before {
+  width: 380px;
+  height: 380px;
+  top: -60px;
+  left: -80px;
+  background: var(--ambient-1);
+}
+
+.section::after {
+  width: 320px;
+  height: 320px;
+  bottom: 0;
+  right: -60px;
+  background: var(--ambient-2);
+}
+
+/* ── Section Header ────────────────────────────────────── */
+.header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-main);
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  margin-bottom: 12px;
+}
+
+.heading {
+  font-size: clamp(1.875rem, 4vw, 2.875rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 16px;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+}
+
+.headingAccent {
+  background-image: linear-gradient(135deg,
+      var(--accent-main) 0%,
+      var(--accent-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subheading {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+/* ── Bento grid (4×1 Languages left, 1×3 other skills right) ──────────────── */
+.bentoLayout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(4, auto);
+  gap: 12px;
+}
+
+/* Left tall panel — Languages, spans all 4 rows (4×1) */
+.cellLeft {
+  grid-column: 1;
+  grid-row: 1 / span 4;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+  border-radius: 18px;
+  background: var(--bg-surface-glass);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: border-color 0.25s ease, transform 0.2s ease;
+}
+
+.cellLeft:hover {
+  border-color: var(--border-main);
+  transform: translateY(-2px);
+}
+
+.cellLeft .skillsRow {
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  flex: 1;
+  gap: 12px;
+}
+
+/* Right horizontal rows — other skills, each 1 row × 3 cols (1×3) */
+.cellRight1,
+.cellRight2,
+.cellRight3,
+.cellRight4 {
+  grid-column: 2 / -1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 24px;
+  border-radius: 18px;
+  background: var(--bg-surface-glass);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: border-color 0.25s ease, transform 0.2s ease;
+}
+
+.cellRight1:hover,
+.cellRight2:hover,
+.cellRight3:hover,
+.cellRight4:hover {
+  border-color: var(--border-main);
+  transform: translateY(-2px);
+}
+
+.cellRight1 { grid-row: 1; }
+.cellRight2 { grid-row: 2; }
+.cellRight3 { grid-row: 3; }
+.cellRight4 { grid-row: 4; }
+
+
+
+/* ── Category label row ────────────────────────────────── */
+.categoryLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.categoryText {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  white-space: nowrap;
+}
+
+.categoryRule {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right,
+      var(--border-main),
+      transparent);
+}
+
+/* ── Skills row (banners) ──────────────────────────────── */
+.skillsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  
+}
+
+/* ── Stagger animation wrapper ─────────────────────────── */
+.skillItem {
+  animation: skillFadeIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ── Footer badge ──────────────────────────────────────── */
+.footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 18px;
+  border-radius: 999px;
+  background: var(--chip-bg);
+  border: 1px solid var(--border-main);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  letter-spacing: 0.04em;
+  transition: border-color 0.2s ease;
+}
+
+.badge:hover {
+  border-color: var(--accent-secondary);
+}
+
+.badgeDot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-secondary);
+  box-shadow: 0 0 8px var(--accent-secondary);
+  flex-shrink: 0;
+}
+
+/* ── Keyframes ─────────────────────────────────────────── */
+@keyframes skillFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .section {
+    padding: 72px 20px 64px;
+  }
+
+  /* 2-col tablet layout: left cell (col 1) + right cells (col 2) */
+  .bentoLayout {
+    grid-template-columns: minmax(170px, 1fr) 1.5fr;
+    grid-template-rows: repeat(4, auto);
+    gap: 10px;
+  }
+
+  .cellLeft {
+    grid-column: 1;
+    grid-row: span 4 / span 4;
+  }
+
+  .cellRight1 { grid-column: 2; grid-row: 1; }
+  .cellRight2 { grid-column: 2; grid-row: 2; }
+  .cellRight3 { grid-column: 2; grid-row: 3; }
+  .cellRight4 { grid-column: 2; grid-row: 4; }
+}
+
+@media (max-width: 680px) {
+  /* Single column mobile — all categories stack vertically */
+  .bentoLayout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 12px;
+  }
+
+  .cellLeft {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .cellLeft .skillsRow {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cellRight1,
+  .cellRight2,
+  .cellRight3,
+  .cellRight4 {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .skillsRow {
+    gap: 10px;
+    justify-content: center;
+  }
+}

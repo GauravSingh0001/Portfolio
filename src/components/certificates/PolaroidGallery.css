@@ -1,0 +1,312 @@
+/* ═══════════════════════════════════════════════════
+   POLAROID CERTIFICATE GALLERY
+   ═══════════════════════════════════════════════════ */
+
+/* ── Section shell ───────────────────────────────── */
+.cert-section {
+  padding: 5rem 2rem 4rem;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ── Header ──────────────────────────────────────── */
+.cert-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.cert-header h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 0.5rem;
+}
+
+.cert-header h2 span {
+  color: #0d9488;
+}
+
+.cert-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: #94a3b8;
+  letter-spacing: 0.1em;
+}
+
+/* ── Board (cork/grid board) ─────────────────────── */
+.cert-board {
+  position: relative;
+  width: min(1140px, 95%);
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid #dde3ec;
+  box-shadow:
+    0 4px 6px -1px rgba(0,0,0,0.07),
+    0 20px 60px -20px rgba(15,23,42,0.14);
+}
+
+/* ── Grid-line background ────────────────────────── */
+.cert-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-color: #f1f5f9;
+  /* Major grid lines */
+  background-image:
+    linear-gradient(rgba(99, 120, 155, 0.22) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 120, 155, 0.22) 1px, transparent 1px),
+    /* Minor grid lines */
+    linear-gradient(rgba(148, 163, 184, 0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.10) 1px, transparent 1px);
+  background-size: 60px 60px, 60px 60px, 15px 15px, 15px 15px;
+  z-index: 0;
+}
+
+/* ── Polaroid 3×3 grid ───────────────────────────── */
+.cert-polaroid-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 44px 36px;
+  padding: 56px 64px;
+}
+
+/* ── Individual polaroid ─────────────────────────── */
+.polaroid {
+  --tilt: 0deg;
+  --accent: #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  transform: rotate(var(--tilt));
+  transition:
+    transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1),
+    filter 0.28s ease;
+  /* Unified white card with shadow — gives true Polaroid feel */
+  background: #fff;
+  border-radius: 3px;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.22));
+  cursor: pointer;
+  position: relative;
+}
+
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.07) translateY(-10px);
+  filter: drop-shadow(0 24px 48px rgba(0,0,0,0.24));
+  z-index: 20;
+}
+
+/* ── Wooden clothespin clip ──────────────────────── */
+.polaroid-clip {
+  position: relative;
+  width: 18px;
+  height: 24px;
+  background: linear-gradient(180deg, #b45309 0%, #92400e 100%);
+  border-radius: 3px 3px 2px 2px;
+  margin-bottom: -3px;
+  z-index: 2;
+  box-shadow:
+    inset 1px 0 0 rgba(255,255,255,0.25),
+    0 2px 6px rgba(0,0,0,0.32);
+}
+
+/* Clip groove */
+.polaroid-clip::before {
+  content: '';
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 1px;
+  background: rgba(0,0,0,0.3);
+  box-shadow: 0 3px 0 rgba(0,0,0,0.3), 0 6px 0 rgba(0,0,0,0.2);
+}
+
+/* Clip top pin */
+.polaroid-clip::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 7px;
+  background: linear-gradient(180deg, #78350f, #92400e);
+  border-radius: 2px 2px 0 0;
+}
+
+/* ── Photo area ─────────────────────────────────── */
+.polaroid-photo {
+  width: 100%;
+  box-sizing: border-box;
+  aspect-ratio: 1 / 1.05;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* White Polaroid frame — equal on top/sides, no bottom (caption continues) */
+  background: #fff;
+  border-top: 14px solid #fff;
+  border-left: 14px solid #fff;
+  border-right: 14px solid #fff;
+  border-bottom: 0;
+
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.polaroid-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* PDF placeholder icon */
+.polaroid-pdf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  background: var(--accent, #f1f5f9);
+  border-radius: 1px;
+}
+
+.polaroid-pdf svg {
+  width: 40px;
+  height: 40px;
+  opacity: 0.45;
+  stroke: #475569;
+}
+
+.polaroid-pdf-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+/* ── Caption strip — thick white bottom of Polaroid ─ */
+.polaroid-caption {
+  width: 100%;
+  background: #fff;
+  /* Sides match photo frame width; large bottom = Polaroid thick bottom */
+  padding: 10px 14px 6px;
+  border-left: 14px solid #fff;
+  border-right: 14px solid #fff;
+  border-bottom: 32px solid #fff;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #475569;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0 3px 3px;
+  /* Separator line between photo and caption */
+  border-top: 2px solid #e9ecf0;
+}
+
+/* ── Tier badge (for priority tier indicators) ────── */
+
+/* ═══════════════════════════════════════════════════
+   PAGINATION
+   ═══════════════════════════════════════════════════ */
+.cert-pagination {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.cert-page-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #0d9488;
+  background: transparent;
+  border: 1.5px solid #0d9488;
+  padding: 8px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.15s ease;
+  letter-spacing: 0.08em;
+}
+
+.cert-page-btn:hover:not(:disabled) {
+  background: #0d9488;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.cert-page-btn:disabled {
+  opacity: 0.28;
+  cursor: not-allowed;
+}
+
+.cert-page-dots {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.cert-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #cbd5e1;
+  border: none;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  padding: 0;
+}
+
+.cert-dot.active {
+  background: #0d9488;
+  width: 22px;
+}
+
+.cert-dot:hover:not(.active) {
+  background: #94a3b8;
+}
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════ */
+@media (max-width: 860px) {
+  .cert-polaroid-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 24px;
+    padding: 36px 32px;
+  }
+}
+
+@media (max-width: 540px) {
+  .cert-polaroid-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 16px;
+    padding: 24px 16px;
+  }
+  .cert-pagination {
+    gap: 12px;
+  }
+  .cert-page-btn {
+    padding: 6px 12px;
+    font-size: 0.68rem;
+  }
+}

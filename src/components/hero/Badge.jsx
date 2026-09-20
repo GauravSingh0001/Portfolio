@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
-import '../style/IDBadge.css';
-import profilePic from '../assets/Profile_Picture.png';
+import './IDBadge.css';
+import profilePic from '../../assets/Profile_Picture.png';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 function Badge() {

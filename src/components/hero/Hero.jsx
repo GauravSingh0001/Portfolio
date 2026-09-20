@@ -1,6 +1,6 @@
 import React from 'react';
 import Badge from './Badge';
-import resumePdf from '../assets/Gaurav_Singh_Resume.pdf';
+import resumePdf from '../../assets/Gaurav_Singh_Resume.pdf';
 import { FaDownload, FaArrowRight, FaLinkedin, FaGithub, FaEnvelope, FaCode } from 'react-icons/fa';
 
 function Hero() {
@@ -14,7 +14,7 @@ function Hero() {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 px-6 md:px-12 lg:px-20 overflow-hidden transition-colors duration-300">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center pt-32 pb-20 px-6 md:px-12 lg:px-20 overflow-hidden transition-colors duration-300">
       {/* Ambient Background Accents using Palette Variables */}
       <div
         className="absolute top-20 left-1/4 w-96 h-96 rounded-full blur-3xl pointer-events-none -z-10 transition-colors duration-500"
@@ -28,16 +28,6 @@ function Hero() {
       <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         {/* Left Column: Hero Content & Bio */}
         <div className="lg:col-span-7 flex flex-col items-start space-y-6 text-left">
-          {/* Status Indicator Pill */}
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-app-glass border border-app-main shadow-xs backdrop-blur-md transition-colors duration-300">
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-app-accent opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-app-accent"></span>
-            </span>
-            <span className="text-xs font-semibold tracking-wide text-app-primary uppercase font-mono">
-              Available for Full-Time Roles
-            </span>
-          </div>
 
           {/* Headline */}
           <div className="space-y-2">
@@ -48,7 +38,7 @@ function Hero() {
               </span>
             </h1>
             <p className="text-2xl sm:text-3xl font-bold text-app-secondary tracking-tight transition-colors duration-300">
-              Full Stack Developer & UI Engineer
+              Full Stack Developer & Backend Engineer
             </p>
           </div>
 
@@ -134,7 +124,7 @@ function Hero() {
 
         {/* Right Column: Interactive ID Badge */}
         <div className="lg:col-span-5 flex items-center justify-center pt-6 lg:pt-0">
-          <Badge />
+        <Badge />
         </div>
       </div>
     </section>

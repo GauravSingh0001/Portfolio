@@ -1,0 +1,191 @@
+.showcase {
+  width: min(1100px, 90%);
+  margin: 120px auto;
+  padding: 40px 0;
+}
+
+.showcase-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: #000000;
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.showcase-title span {
+  color:#09978b;
+}
+
+.showcase-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 140px;
+}
+
+/* Reverse every second row */
+.showcase-row.reverse {
+  grid-template-columns: 1fr 1.2fr;
+  direction: rtl;
+}
+
+.showcase-row.reverse > * {
+  direction: ltr;
+}
+
+/* =========================
+   IMAGE CARD
+========================= */
+
+
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.7s cubic-bezier(.2,.8,.2,1);
+  
+}
+
+.project-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Dark gradient */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 30px;
+  color: white;
+  pointer-events: none;
+}
+
+.card-overlay h2 {
+  margin: 0;
+  font-size: 32px;
+}
+
+/* =========================
+   DETAILS
+========================= */
+
+.project-details {
+  max-width: 480px;
+}
+
+.project-number {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 15px;
+  color: black;
+  font-family: monospace;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.project-details h3 {
+  margin: 0 0 20px;
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 800;
+  color: black;
+  line-height: 1.1;
+}
+
+.project-details p {
+  margin-bottom: 25px;
+  color: black;
+  font-size: 16px;
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+}
+
+/* Removed text overlay card transform */
+
+/* =========================
+   TAGS
+========================= */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 3;
+}
+
+.tags span {
+  padding: 6px 14px;
+  border: 1px solid rgb(240, 244, 243);
+  background:transparent;
+  corner-shape: superellipse(3);
+  border-radius:15px;
+  color: #000000;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: monospace;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.project-details button {
+  margin:5px;
+  padding: 12px 24px;
+  border: 1px solid #000000;
+  border-radius: 6px;
+  background: transparent;
+  color: #000000;
+  cursor: pointer;
+  transition: all .3s cubic-bezier(.2,.8,.2,1);
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
+  position: relative;
+  z-index: 3;
+}
+
+.project-details button:hover {
+  background: rgba(100, 255, 218, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(100, 255, 218, 0.15);
+}
+
+/* Remove default link styles */
+.project-details a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+  .showcase {
+    width: 90%;
+    margin: 80px auto;
+  }
+
+  .showcase-row,
+  .showcase-row.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: 30px;
+    margin-bottom: 90px;
+  }
+
+  .project-card {
+    height: 300px;
+  }
+
+  .project-details h3 {
+    font-size: 28px;
+  }
+}

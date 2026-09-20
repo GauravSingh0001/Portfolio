@@ -18,6 +18,13 @@ function Navbar() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const scrollToSection = (e, id) => {
+        const target = document.getElementById(id);
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <>
             {/* Left / Main Navigation Navbar */}
@@ -28,9 +35,9 @@ function Navbar() {
                 }`}
             >
                 <div className='flex items-center h-full px-4 shrink-0'>
-                    <Link to="/Home">
+                    <Link to="#hero" onClick={(e) => scrollToSection(e, 'hero')}>
                         <h1 className='text-[32px] sm:text-[34px] font-extrabold text-app-primary hover:text-app-accent transition-colors tracking-tight'>
-                            Gaurav
+                            Gaurav <span className='text-[#137cbd]'>.</span>
                         </h1>
                     </Link>
                 </div>
@@ -38,16 +45,16 @@ function Navbar() {
                 {isMenuOpen && (
                     <div className='h-full rounded-md flex mx-6 items-center gap-8 justify-between flex-1 max-w-[260px]'>
                         <div className='h-full flex-1 flex items-center justify-center'>
-                            <Link to="/Home" className='text-[16px] font-medium text-app-secondary leading-[20px] tracking-normal hover:text-app-accent transition-colors'>Home</Link>
+                            <Link to="#skills" onClick={(e) => scrollToSection(e, 'skills')} className='text-[16px] font-medium text-app-secondary leading-[20px] tracking-normal hover:text-app-accent transition-colors'>Skills</Link>
                         </div>
                         <div className='h-full flex-1 flex items-center justify-center'>
-                            <Link to="/About" className='text-app-secondary text-[16px] leading-[20px] font-medium tracking-normal hover:text-app-accent transition-colors'>About</Link>
+                            <Link to="#experience" onClick={(e) => scrollToSection(e, 'experience')} className='text-app-secondary text-[16px] leading-[20px] font-medium tracking-normal hover:text-app-accent transition-colors'>Experience</Link>
                         </div>
                         <div className='h-full flex-1 flex items-center justify-center'>
-                            <Link className='text-app-secondary text-[16px] leading-[20px] font-medium tracking-normal hover:text-app-accent transition-colors'>Skills</Link>
+                            <Link to="#projects" onClick={(e) => scrollToSection(e, 'projects')} className='text-app-secondary text-[16px] leading-[20px] font-medium tracking-normal hover:text-app-accent transition-colors'>Projects</Link>
                         </div>
                         <div className='h-full flex-1 flex items-center justify-center'>
-                            <Link className='text-app-secondary text-[16px] leading-[20px] font-medium tracking-normal hover:text-app-accent transition-colors'>Contact</Link>
+                            <Link to="#certificates" onClick={(e) => scrollToSection(e, 'certificates')} className='text-app-secondary text-[16px] leading-[20px] font-medium tracking-normal hover:text-app-accent transition-colors'>Certificates</Link>
                         </div>
                     </div>
                 )}

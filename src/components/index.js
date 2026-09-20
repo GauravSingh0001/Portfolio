@@ -1,0 +1,9 @@
+export { default as Navbar } from './navbar/Navbar';
+export { default as ThemeNavbar } from './navbar/ThemeNavbar';
+export { default as Hero } from './hero/Hero';
+export { default as Badge } from './hero/Badge';
+export { default as Skills } from './skills/Skills';
+export { default as Experience } from './experience/Experience';
+export { default as Project } from './projects/Project';
+export { default as Certificate } from './certificates/Certificate';
+export { default as Footer } from './footer/Footer';

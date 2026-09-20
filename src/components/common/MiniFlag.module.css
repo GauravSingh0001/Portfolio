@@ -1,0 +1,84 @@
+/* ── Mini fishtail flag ───────────────────────────────────────────────── */
+.flag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.16));
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: default;
+}
+
+.flag:hover {
+  transform: translateY(-4px) scale(1.06);
+}
+
+.flagBody {
+  position: relative;
+  width: 56px;
+  height: 72px;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 82%, 0% 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.flagTexture {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.10) 1px, transparent 1px);
+  background-size: 4px 4px;
+  pointer-events: none;
+}
+
+.flagStitch {
+  position: absolute;
+  top: 3px; left: 3px; right: 3px; bottom: 3px;
+  border: 1px dashed rgba(255,255,255,0.6);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 80%, 0% 100%);
+  pointer-events: none;
+}
+
+.flagIcon {
+  position: relative;
+  z-index: 1;
+  width: 26px;
+  height: 26px;
+  margin-top: -10px;
+  display: block;
+  object-fit: contain;
+}
+
+.flagIconInvert {
+  filter: brightness(0) invert(1);
+}
+
+.flagName {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.52rem;
+  font-weight: 700;
+  color: #334155;
+  letter-spacing: 0.05em;
+  text-align: center;
+  line-height: 1.2;
+  max-width: 56px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Fallback chip — when no icon mapping found */
+.chip {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: #0f766e;
+  background: #f0fdf9;
+  border: 1px solid #99f6e4;
+  padding: 3px 9px;
+  border-radius: 5px;
+}
