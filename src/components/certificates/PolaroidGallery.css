@@ -4,7 +4,7 @@
 
 /* ── Section shell ───────────────────────────────── */
 .cert-section {
-  padding: 5rem 2rem 4rem;
+  padding: clamp(3.5rem, 6vw, 5rem) clamp(1rem, 4vw, 2rem) 4rem;
   background: #f8fafc;
   display: flex;
   flex-direction: column;
@@ -71,8 +71,8 @@
   z-index: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 44px 36px;
-  padding: 56px 64px;
+  gap: clamp(1.5rem, 3vw, 2.75rem) clamp(1rem, 2.5vw, 2.25rem);
+  padding: clamp(2rem, 4vw, 3.5rem) clamp(1rem, 4vw, 4rem);
 }
 
 /* ── Individual polaroid ─────────────────────────── */
@@ -308,5 +308,11 @@
   .cert-page-btn {
     padding: 6px 12px;
     font-size: 0.68rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .cert-polaroid-grid {
+    grid-template-columns: 1fr;
   }
 }

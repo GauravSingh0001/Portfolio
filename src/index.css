@@ -1,12 +1,11 @@
 @import "tailwindcss";
 
 /* ═══════════════════════════════════════════════════════════════════
-   PORTFOLIO DESIGN SYSTEM — CENTRAL THEME PALETTES
-   Switch or edit any color here to update the entire website.
-   ═══════════════════════════════════════════════════════════════════ */
+  PORTFOLIO DESIGN SYSTEM — LIGHT PALETTE
+  ═══════════════════════════════════════════════════════════════════ */
 
 :root {
-  /* ── Light Mode: Modern Studio Minimalist ───────────────────────── */
+  /* ── Modern Studio Minimalist ───────────────────────────────────── */
   --bg-main: #f8fafc;                  /* Pristine, crisp slate-white */
   --bg-surface: #ffffff;               /* Pure white elevated cards */
   --bg-surface-glass: rgba(255, 255, 255, 0.82); /* Glassmorphism surface */
@@ -31,38 +30,19 @@
   --ambient-2: rgba(16, 185, 129, 0.08); /* Atmospheric light glow 2 */
 }
 
-html.dark {
-  /* ── Dark Mode: Wayne Enterprises Obsidian Stealth ────────────── */
-  --bg-main: #0a0d12;                  /* Deep obsidian / stealth space */
-  --bg-surface: #121722;               /* Elevated dark slate cards */
-  --bg-surface-glass: rgba(18, 23, 34, 0.85); /* Dark glassmorphic surface */
-  --border-main: #1f2838;              /* Hairline dark borders */
-  --border-subtle: rgba(31, 40, 56, 0.7);
-  
-  --accent-main: #38bdf8;              /* Electric sky-cyan tactical glow */
-  --accent-secondary: #34d399;         /* Luminous emerald live badge */
-  --accent-hover: #0284c7;
-  
-  --text-primary: #f8fafc;             /* Crisp platinum white headline */
-  --text-secondary: #94a3b8;           /* Slate-400 clean body text */
-  --text-muted: #64748b;               /* Slate-500 muted text */
-  
-  --btn-primary-bg: #f8fafc;           /* High-contrast platinum white CTA */
-  --btn-primary-text: #0a0d12;         /* Deep obsidian text on button */
-  --btn-secondary-bg: rgba(18, 23, 34, 0.9); /* Dark slate secondary CTA */
-  --btn-secondary-text: #f8fafc;
-  
-  --chip-bg: rgba(18, 23, 34, 0.75);   /* Dark frosted chips */
-  --ambient-1: rgba(56, 189, 248, 0.12); /* Ambient cyan glow */
-  --ambient-2: rgba(52, 211, 153, 0.08); /* Ambient emerald glow */
-}
-
 /* ── Base Styles ─────────────────────────────────────────────────── */
 html, body {
   background-color: var(--bg-main);
   color: var(--text-primary);
-  transition: background-color 0.35s cubic-bezier(0.4, 0, 0.2, 1), color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  min-width: 320px;
 }
 
 /* ── Reusable Theme Helper Utilities ─────────────────────────────── */

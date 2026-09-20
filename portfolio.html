@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     :root{--bg-main:#f8fafc;--bg-surface:#ffffff;--bg-surface-glass:rgba(255,255,255,0.82);--border-main:#e2e8f0;--accent-main:#0284c7;--accent-secondary:#10b981;--text-primary:#0f172a;--text-secondary:#475569;--text-muted:#64748b;--btn-primary-bg:#0f172a;--btn-primary-text:#ffffff;--btn-secondary-bg:#ffffff;--btn-secondary-text:#0f172a;--chip-bg:rgba(255,255,255,0.9);--ambient-1:rgba(14,165,233,0.10);--ambient-2:rgba(16,185,129,0.08);}
-    html.dark{--bg-main:#0a0d12;--bg-surface:#121722;--bg-surface-glass:rgba(18,23,34,0.85);--border-main:#1f2838;--accent-main:#38bdf8;--accent-secondary:#34d399;--text-primary:#f8fafc;--text-secondary:#94a3b8;--text-muted:#64748b;--btn-primary-bg:#f8fafc;--btn-primary-text:#0a0d12;--btn-secondary-bg:rgba(18,23,34,0.9);--btn-secondary-text:#f8fafc;--chip-bg:rgba(18,23,34,0.75);--ambient-1:rgba(56,189,248,0.12);--ambient-2:rgba(52,211,153,0.08);}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
     html,body{background-color:var(--bg-main);color:var(--text-primary);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;transition:background-color .35s,color .35s;overflow-x:hidden;}
@@ -25,7 +24,6 @@
     .nav-links{display:flex;align-items:center;gap:32px;flex:1;margin:0 24px;max-width:260px;white-space:nowrap;}
     .nav-links a{font-size:15px;font-weight:500;color:var(--text-secondary);transition:color .2s;}.nav-links a:hover{color:var(--accent-main);}
     .nav-toggle{margin-left:auto;padding:0 16px;height:100%;display:flex;align-items:center;cursor:pointer;font-size:18px;font-weight:700;color:var(--accent-main);transition:color .2s;user-select:none;}.nav-toggle:hover{color:var(--text-primary);}
-    .theme-btn{position:fixed;top:28px;right:1rem;z-index:50;height:64px;width:64px;border-radius:12px;background:var(--bg-surface-glass);border:1px solid var(--border-main);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 3px rgba(0,0,0,.08);backdrop-filter:blur(12px);cursor:pointer;font-size:22px;transition:all .3s;}.theme-btn:hover{border-color:var(--accent-main);transform:scale(1.05);}
 
     /* HERO */
     .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:8rem 1.5rem 5rem;overflow:hidden;}
@@ -190,7 +188,6 @@
   </div>
   <div class="nav-toggle" id="navToggle" title="Toggle Menu" aria-label="Toggle menu">:</div>
 </nav>
-<button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode" title="Toggle theme">&#127769;</button>
 
 <!-- HERO -->
 <section class="hero" id="hero">
@@ -393,12 +390,6 @@
 </footer>
 
 <script>
-  // Theme toggle
-  const html=document.documentElement,themeBtn=document.getElementById('themeBtn');
-  const saved=localStorage.getItem('theme');
-  if(saved==='dark'||(!saved&&window.matchMedia('(prefers-color-scheme:dark)').matches)){html.classList.add('dark');themeBtn.textContent='&#9728;';}
-  themeBtn.addEventListener('click',()=>{const d=html.classList.toggle('dark');themeBtn.textContent=d?'\u2600':'\uD83C\uDF19';localStorage.setItem('theme',d?'dark':'light');});
-
   // Navbar
   const navbar=document.getElementById('navbar'),navLinks=document.getElementById('navLinks'),navToggle=document.getElementById('navToggle');
   let navOpen=true;

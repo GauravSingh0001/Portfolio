@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope, FaHeart, FaArrowUp, FaCode } from "react-icons/fa";
 
 const socialLinks = [

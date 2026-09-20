@@ -1,4 +1,3 @@
-import React from 'react';
 import Badge from './Badge';
 import resumePdf from '../../assets/Gaurav_Singh_Resume.pdf';
 import { FaDownload, FaArrowRight, FaLinkedin, FaGithub, FaEnvelope, FaCode } from 'react-icons/fa';
@@ -14,7 +13,7 @@ function Hero() {
   ];
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center pt-32 pb-20 px-6 md:px-12 lg:px-20 overflow-hidden transition-colors duration-300">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center pt-[clamp(7rem,12vw,9rem)] pb-[clamp(4rem,8vw,6rem)] px-[clamp(1rem,4vw,5rem)] overflow-hidden">
       {/* Ambient Background Accents using Palette Variables */}
       <div
         className="absolute top-20 left-1/4 w-96 h-96 rounded-full blur-3xl pointer-events-none -z-10 transition-colors duration-500"
@@ -25,25 +24,25 @@ function Hero() {
         style={{ backgroundColor: 'var(--ambient-2)' }}
       />
 
-      <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
         {/* Left Column: Hero Content & Bio */}
-        <div className="lg:col-span-7 flex flex-col items-start space-y-6 text-left">
+        <div className="lg:col-span-7 flex flex-col items-start space-y-5 text-left">
 
           {/* Headline */}
           <div className="space-y-2">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-app-primary leading-[1.1] transition-colors duration-300">
+            <h1 className="text-[clamp(2.25rem,4.5vw,3.75rem)] font-black tracking-tight text-app-primary leading-[1.1]">
               Hi, I'm{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--text-primary)] via-[var(--text-secondary)] to-[var(--accent-main)]">
                 Gaurav Singh
               </span>
             </h1>
-            <p className="text-2xl sm:text-3xl font-bold text-app-secondary tracking-tight transition-colors duration-300">
+            <p className="text-[clamp(1.25rem,2.4vw,1.75rem)] font-bold text-app-secondary tracking-tight">
               Full Stack Developer & Backend Engineer
             </p>
           </div>
 
           {/* Introduction Paragraph */}
-          <p className="text-base sm:text-lg text-app-secondary max-w-2xl leading-relaxed font-normal transition-colors duration-300">
+          <p className="text-base text-app-secondary max-w-2xl leading-relaxed font-normal">
             Building performant, scalable web applications with modern architecture and delightful user experiences.
             Focused on the React ecosystem, robust APIs, and interactive interfaces engineered with precision.
           </p>
@@ -123,7 +122,7 @@ function Hero() {
         </div>
 
         {/* Right Column: Interactive ID Badge */}
-        <div className="lg:col-span-5 flex items-center justify-center pt-6 lg:pt-0">
+        <div className="lg:col-span-5 flex items-center justify-center pt-2 lg:pt-0">
         <Badge />
         </div>
       </div>

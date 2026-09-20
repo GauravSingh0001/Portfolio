@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './PolaroidGallery.css';
 
 /* ── Load full certificate files (click target) ───────────────────────── */

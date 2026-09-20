@@ -1,4 +1,3 @@
-import React from 'react';
 import AccordionGallery from './Experiences';
 import cantilver from '../../assets/experience/cantilever.webp'
 import infosys from '../../assets/experience/infosys.webp'
@@ -21,7 +20,7 @@ const items = [
     label: 'Infosys Springboard',
     role: 'Software Developer Intern',
     period: 'Jan 2024 – Jun 2024',
-    skills: ['Python','Flask','REST API','LLM',,'Git'],
+    skills: ['Python','Flask','REST API','LLM','Git'],
     certificateLink: 'https://drive.google.com/file/d/14B1e_KNB0sKNUcIYdwc82ZzHC0Y0znIz/view?usp=sharing',
     link: 'https://drive.google.com/file/d/14B1e_KNB0sKNUcIYdwc82ZzHC0Y0znIz/view?usp=sharing',
     what: 'Developed enterprise-grade backend modules in Java with Spring Boot for Infosys Springboards learning platform, contributing to features that supported over 5 lakh learners across India.',
@@ -44,11 +43,11 @@ const items = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="experience-section" style={{ padding: '5rem 2rem', backgroundColor: '#F8FAFC', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <section id="experience" className="experience-section" style={{ padding: 'clamp(3.5rem, 6vw, 5rem) clamp(1rem, 4vw, 2rem)', backgroundColor: '#F8FAFC', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', color: '#0f172a', marginBottom: '3rem', fontWeight: 800 }}>
         <span style={{ color: '#0d9488' }}>Experience</span>
       </h2>
-      <div style={{ width: '100%', maxWidth: '1000px' }}>
+      <div style={{ width: '100%', maxWidth: 'min(1000px, 100%)' }}>
         <AccordionGallery
           items={items}
           defaultIndex={2}
@@ -64,7 +63,7 @@ export default function Experience() {
           parallax={0.5}
           tilt={8}
           stagger={0.06}
-          height={460}
+          height={400}
           gap={10}
           radius={16}
           orientation="horizontal"

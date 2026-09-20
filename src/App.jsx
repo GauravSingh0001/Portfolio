@@ -1,4 +1,3 @@
-import React from 'react';
 import Navbar from './components/navbar/Navbar';
 import Hero from './components/hero/Hero';
 import Skills from './components/skills/Skills';
@@ -9,7 +8,7 @@ import Footer from './components/footer/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-app-main text-app-primary transition-colors duration-300">
+    <div className="min-h-screen bg-app-main text-app-primary">
       <Navbar />
       <Hero />
       <Skills />

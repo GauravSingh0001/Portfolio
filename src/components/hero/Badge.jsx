@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import './IDBadge.css';
 import profilePic from '../../assets/Profile_Picture.png';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';

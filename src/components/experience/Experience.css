@@ -13,6 +13,7 @@
   max-width: 100%;
   perspective: 1400px;
   perspective-origin: 50% 50%;
+  height: clamp(300px, 34vw, 400px) !important;
 }
 
 .accordion-gallery--vertical {
