@@ -29,9 +29,8 @@ function Navbar() {
             {/* Left / Main Navigation Navbar */}
             <nav
                 aria-label="Main Navigation"
-                className={`fixed top-4 z-50 mt-4 left-4 sm:left-10 lg:left-16 h-14 max-w-[calc(100vw-2rem)] rounded-xl bg-app-glass border border-app-main flex items-center p-1.5 shadow-sm backdrop-blur-md transition-all duration-500 overflow-hidden ${
-                    isMenuOpen ? 'w-[min(540px,calc(100vw-2rem))]' : 'w-[200px]'
-                }`}
+                className={`fixed top-4 z-50 mt-4 left-4 sm:left-10 lg:left-16 h-14 max-w-[calc(100vw-2rem)] rounded-xl bg-app-glass border border-app-main flex items-center p-1.5 shadow-sm backdrop-blur-md transition-all duration-500 overflow-hidden ${isMenuOpen ? 'w-[min(540px,calc(100vw-2rem))]' : 'w-[200px]'
+                    }`}
             >
                 <div className='flex items-center h-full px-3 sm:px-4 shrink-0'>
                     <Link to="#hero" onClick={(e) => scrollToSection(e, 'hero')}>

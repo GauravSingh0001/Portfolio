@@ -123,7 +123,7 @@ function Hero() {
 
         {/* Right Column: Interactive ID Badge */}
         <div className="lg:col-span-5 flex items-center justify-center pt-2 lg:pt-0">
-        <Badge />
+          <Badge />
         </div>
       </div>
     </section>

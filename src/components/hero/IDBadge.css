@@ -11,9 +11,17 @@
 
 /* ── Swing animation ─────────────────────────────────── */
 @keyframes badgeSwing {
-    0%   { transform: rotate(-3.5deg); }
-    50%  { transform: rotate(3.5deg); }
-    100% { transform: rotate(-3.5deg); }
+    0% {
+        transform: rotate(-3.5deg);
+    }
+
+    50% {
+        transform: rotate(3.5deg);
+    }
+
+    100% {
+        transform: rotate(-3.5deg);
+    }
 }
 
 .badge-swing-wrapper {
@@ -35,13 +43,11 @@
 .lanyard-strap {
     width: 22px;
     height: 48px;
-    background: repeating-linear-gradient(
-        45deg,
-        #1c2024,
-        #1c2024 4px,
-        #292e34 4px,
-        #292e34 8px
-    );
+    background: repeating-linear-gradient(45deg,
+            #1c2024,
+            #1c2024 4px,
+            #292e34 4px,
+            #292e34 8px);
     border-radius: 4px 4px 0 0;
     position: relative;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
@@ -90,7 +96,7 @@
     height: 6px;
     background: #1a1d20;
     border-radius: 3px;
-    box-shadow: inset 0 1px 2px rgba(0,0,0,0.8);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .badge-clip::after {
@@ -115,7 +121,7 @@
     border-radius: 18px;
     overflow: hidden;
     position: relative;
-    box-shadow: 
+    box-shadow:
         0 24px 48px -12px rgba(0, 0, 0, 0.5),
         0 12px 24px -8px rgba(0, 0, 0, 0.3),
         0 0 0 1px rgba(255, 255, 255, 0.08);
@@ -153,12 +159,10 @@
     border-radius: 18px;
     opacity: 0;
     transition: opacity 0.3s ease;
-    background: radial-gradient(
-        circle 320px at var(--glare-x, 50%) var(--glare-y, 50%),
-        rgba(255, 255, 255, 0.14) 0%,
-        rgba(255, 255, 255, 0.04) 40%,
-        transparent 80%
-    );
+    background: radial-gradient(circle 320px at var(--glare-x, 50%) var(--glare-y, 50%),
+            rgba(255, 255, 255, 0.14) 0%,
+            rgba(255, 255, 255, 0.04) 40%,
+            transparent 80%);
 }
 
 .badge-swing-wrapper:hover .card-glare {
@@ -370,17 +374,15 @@
 .barcode-bars {
     height: 36px;
     width: 100%;
-    background: repeating-linear-gradient(
-        90deg,
-        #000 0, #000 2px,
-        #fff 2px, #fff 4px,
-        #000 4px, #000 7px,
-        #fff 7px, #fff 9px,
-        #000 9px, #000 11px,
-        #fff 11px, #fff 14px,
-        #000 14px, #000 17px,
-        #fff 17px, #fff 19px
-    );
+    background: repeating-linear-gradient(90deg,
+            #000 0, #000 2px,
+            #fff 2px, #fff 4px,
+            #000 4px, #000 7px,
+            #fff 7px, #fff 9px,
+            #000 9px, #000 11px,
+            #fff 11px, #fff 14px,
+            #000 14px, #000 17px,
+            #fff 17px, #fff 19px);
     margin-bottom: 5px;
     border-radius: 2px;
 }

@@ -43,6 +43,7 @@ html {
 
 body {
   min-width: 320px;
+  zoom: 0.8;
 }
 
 /* ── Reusable Theme Helper Utilities ─────────────────────────────── */

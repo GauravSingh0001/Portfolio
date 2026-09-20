@@ -20,7 +20,7 @@ const items = [
     label: 'Infosys Springboard',
     role: 'Software Developer Intern',
     period: 'Jan 2024 – Jun 2024',
-    skills: ['Python','Flask','REST API','LLM','Git'],
+    skills: ['Python', 'Flask', 'REST API', 'LLM', 'Git'],
     certificateLink: 'https://drive.google.com/file/d/14B1e_KNB0sKNUcIYdwc82ZzHC0Y0znIz/view?usp=sharing',
     link: 'https://drive.google.com/file/d/14B1e_KNB0sKNUcIYdwc82ZzHC0Y0znIz/view?usp=sharing',
     what: 'Developed enterprise-grade backend modules in Java with Spring Boot for Infosys Springboards learning platform, contributing to features that supported over 5 lakh learners across India.',

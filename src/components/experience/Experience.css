@@ -1,4 +1,4 @@
-﻿.accordion-gallery {
+.accordion-gallery {
   --ag-accent: #ffffff;
   --ag-overlay: #060010;
   --ag-text: #ffffff;
@@ -82,7 +82,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  
+
 }
 
 .ag-panel__label {
@@ -126,10 +126,12 @@
     perspective: none;
     height: auto !important;
   }
+
   .ag-panel {
     min-height: 84px;
     transform: none !important;
   }
+
   .accordion-gallery .ag-panel__media {
     width: 100%;
     height: var(--ag-media-size);
@@ -137,6 +139,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .ag-panel,
   .ag-panel__media {
     will-change: auto;
